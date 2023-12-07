@@ -1,0 +1,132 @@
+﻿<Window x:Class="SQL_Lab_2.EditPlaylists"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQL_Lab_2"
+        mc:Ignorable="d"
+        Title="EditPlaylists" Height="600" Width="1200" Background="Lavender">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Playlist name:"
+               VerticalAlignment="Top"
+               Grid.Column="4"
+               Grid.Row="3"
+               FontSize="16"
+               FontWeight="Bold"/>
+        <TextBox x:Name="PlaylistEditName"
+                 Margin="0,5,0,0"
+                 Grid.RowSpan="2"
+                VerticalAlignment="Top"
+                Grid.Column="5"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"/>
+        <Label  Content="Tracks:"
+                VerticalAlignment="Top"
+                Grid.Column="4"
+                Grid.Row="5"
+                FontSize="16"
+                FontWeight="Bold"/>
+        <ListBox x:Name= "AllAvailableTracks"
+                 DisplayMemberPath="Name"
+                 Grid.Column="8"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="2"
+                 Grid.RowSpan="12" 
+                 SelectionMode="Multiple"/>
+
+        <ListBox x:Name="EditSelectedTracksList"
+                 DisplayMemberPath="Name"
+                 Grid.Column="5"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="2"
+                 Grid.RowSpan="10"/>
+
+        <Label Content="All playlists"
+               VerticalAlignment="Top"
+               Margin="80,0,0,0"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Grid.Row="3"
+               FontSize="16"
+               FontWeight="Bold"/>
+
+        <ListBox x:Name="AllAvailablePlaylists"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="2"
+                 Grid.RowSpan="10"
+                 SelectionChanged="AllAvailablePlaylists_SelectionChanged">
+            <ListBox.ItemTemplate>
+                  <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                   </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="AddTracks"
+                Grid.Column="7"
+                Grid.Row="10"
+                Content="Add tracks"
+                Click="AddTracks_Click"/>
+        
+        <Button x:Name="DeleteSelectedTracks"
+                Grid.Column="4"
+                Grid.Row="12"
+                Content="Delete Tracks"  
+                Click="DeleteSelectedTracks_Click"/>
+
+        <Button x:Name="SavePlaylist"
+                Grid.Column="4"
+                Grid.Row="11"
+                Content="Save playlist"
+                Click="SavePlaylist_Click"/>
+
+        <Button x:Name="DeletePlaylist"
+                Grid.Column="1"
+                Grid.Row="15"
+                Content="Delete Playlist" Click="DeletePlaylist_Click"/>
+
+        <Button x:Name="MainMenu"
+                Grid.Column="1"
+                Grid.Row="17"
+                Content="Main Menu" Click="MainMenu_Click"/>
+
+    </Grid>
+</Window>
